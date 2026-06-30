@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-blue: #7C3AED; /* Vibrant royal PURPLE */
+  --color-primary-dark: #5B21B6; /* Deeper twilight purple */
+  --color-primary-light: #F5F3FF; /* Soft white/purple background */
+  --color-gold: #FACC15; /* Glowing bright YELLOW */
+  --color-bg-gray: #000000; /* Pure black background */
+  
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+@layer utilities {
+  .bg-primary-blue {
+    background-color: #7C3AED;
+  }
+  
+  .text-primary-blue {
+    color: #7C3AED;
+  }
+
+  .card-shadow {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  }
+
+  /* Stunning glowing electric purple styles */
+  .text-glow-blue {
+    color: #C084FC;
+    text-shadow: 0 0 8px rgba(192, 132, 252, 0.6), 0 0 20px rgba(192, 132, 252, 0.2);
+  }
+
+  .bg-glow-blue {
+    background-color: #A855F7;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.5), 0 0 24px rgba(168, 85, 247, 0.2);
+  }
+
+  .border-glow-blue {
+    border-color: #A855F7;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.3);
+  }
+}
+
+@keyframes green-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Base styling and layout refinements */
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.bg-green-neon {
+  background-color: #FACC15;
+  background-image: linear-gradient(135deg, #FACC15 0%, #FDE047 50%, #CA8A04 100%);
+}
+
+.bg-green-dark {
+  background-color: #CA8A04;
+}
+
+.text-green-neon {
+  color: #FACC15;
+  filter: drop-shadow(0 0 2px rgba(250, 204, 21, 0.4));
+}
+
+/* High-end Dark Theme Override */
+.bg-white {
+  background-color: #0c0c0e !important;
+}
+.bg-bg-gray {
+  background-color: #000000 !important;
+}
+.text-black {
+  color: #ffffff !important;
+}
+.text-gray-900 {
+  color: #ffffff !important;
+}
+.text-gray-800 {
+  color: #f4f4f5 !important;
+}
+.text-gray-700 {
+  color: #e4e4e7 !important;
+}
+.text-gray-600 {
+  color: #d4d4d8 !important;
+}
+.text-gray-500 {
+  color: #a1a1aa !important;
+}
+.border-gray-100 {
+  border-color: #1c1c21 !important;
+}
+.border-gray-200 {
+  border-color: #2e2e35 !important;
+}
+.border-gray-50 {
+  border-color: #1c1c21 !important;
+}
+.bg-gray-50 {
+  background-color: #121215 !important;
+}
+.bg-gray-100 {
+  background-color: #1c1c21 !important;
+}
+.hover\:bg-gray-50:hover {
+  background-color: #18181b !important;
+}
+
+/* Maintain proper dark contrast inside active yellow buttons */
+.bg-green-neon .text-black, 
+.bg-green-neon.text-black,
+.bg-gold .text-black,
+.bg-gold.text-black,
+[class*="bg-green-neon"] .text-black,
+[class*="bg-green-neon"].text-black,
+[class*="bg-yellow"] .text-black,
+[class*="bg-yellow"].text-black {
+  color: #000000 !important;
+}
+

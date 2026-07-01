@@ -7,7 +7,7 @@ const makePaymentItems: MenuItem[] = [
   { id: 'bank', label: 'Withdraw', icon: Icons.Send, color: 'text-blue-500' },
   { id: 'airtime', label: 'Airtime', icon: Icons.Airtime, color: 'text-orange-500' },
   { id: 'data', label: 'Data', icon: Icons.Data, color: 'text-blue-400' },
-  { id: 'subscribe', label: 'BUY NAIRA CODE', icon: Icons.FileText, color: 'text-yellow-500' },
+  { id: 'subscribe', label: 'WIN CODE', icon: Icons.FileText, color: 'text-yellow-500' },
 ];
 
 const serviceItems: MenuItem[] = [

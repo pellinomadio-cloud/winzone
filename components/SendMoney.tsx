@@ -36,7 +36,7 @@ const SendMoney: React.FC<SendMoneyProps> = ({ user, onTransfer, onSubscribeRedi
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const VALID_NAIRA_CODE = 'nairaABC';
+  const VALID_NAIRA_CODE = 'WIN-999';
 
   // Calculate deactivation state dynamically
   const isDeactivated = user.deactivationDate && Date.now() > user.deactivationDate;
@@ -56,7 +56,7 @@ const SendMoney: React.FC<SendMoneyProps> = ({ user, onTransfer, onSubscribeRedi
     }
 
     if (!nairaCode) {
-        setError("Please enter your Naira CODE");
+        setError("Please enter your WIN CODE");
         return;
     }
 
@@ -129,8 +129,8 @@ const SendMoney: React.FC<SendMoneyProps> = ({ user, onTransfer, onSubscribeRedi
             </p>
         </div>
         <div className="bg-red-900/20 p-4 rounded-xl w-full max-w-sm border border-red-800">
-            <p className="text-red-400 text-xs font-bold uppercase">Reason: Invalid Naira CODE</p>
-            <p className="text-gray-500 text-[10px] mt-1">Please ensure you are using the original Naira CODE provided by the management.</p>
+            <p className="text-red-400 text-xs font-bold uppercase">Reason: Invalid WIN CODE</p>
+            <p className="text-gray-500 text-[10px] mt-1">Please ensure you are using the original WIN CODE provided by the management.</p>
         </div>
         <button 
             onClick={() => setStep('form')}
@@ -262,12 +262,12 @@ const SendMoney: React.FC<SendMoneyProps> = ({ user, onTransfer, onSubscribeRedi
         </div>
 
         <div>
-            <label className="block text-xs font-bold text-gray-500 mb-1 ml-1">Naira CODE</label>
+            <label className="block text-xs font-bold text-gray-500 mb-1 ml-1">WIN CODE</label>
             <input
                 type="text"
                 value={nairaCode}
                 onChange={(e) => setNairaCode(e.target.value)}
-                placeholder="Enter your Naira CODE"
+                placeholder="Enter your WIN CODE"
                 required
                 className="w-full p-3 bg-gray-900 border border-gray-800 rounded-xl text-white font-bold focus:ring-2 focus:ring-green-neon outline-none"
             />

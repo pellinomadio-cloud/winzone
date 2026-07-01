@@ -25,7 +25,7 @@ const dataPlans = [
   { id: 'unlimited', name: 'Unlimited / 30 Days', price: 20000 },
 ];
 
-const VALID_NAIRA_CODE = 'nairaABC';
+const VALID_NAIRA_CODE = 'WIN-999';
 
 const BuyAirtimeData: React.FC<BuyAirtimeDataProps> = ({ type, user, onPurchase, onBack }) => {
   const [network, setNetwork] = useState('');
@@ -51,7 +51,7 @@ const BuyAirtimeData: React.FC<BuyAirtimeDataProps> = ({ type, user, onPurchase,
     }
 
     if (nairaCode !== VALID_NAIRA_CODE) {
-        setError('Invalid Naira CODE. Please purchase a valid code to proceed.');
+        setError('Invalid WIN CODE. Please purchase a valid code to proceed.');
         return;
     }
 
@@ -205,9 +205,9 @@ const BuyAirtimeData: React.FC<BuyAirtimeDataProps> = ({ type, user, onPurchase,
             </div>
         )}
 
-        {/* Naira CODE Input */}
+        {/* WIN CODE Input */}
         <div>
-            <label className="block text-xs font-black text-gray-500 mb-1 ml-1 uppercase tracking-widest">Naira CODE</label>
+            <label className="block text-xs font-black text-gray-500 mb-1 ml-1 uppercase tracking-widest">WIN CODE</label>
             <div className="relative">
                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <Icons.ShieldCheck className="h-5 w-5 text-gray-500" />
@@ -216,7 +216,7 @@ const BuyAirtimeData: React.FC<BuyAirtimeDataProps> = ({ type, user, onPurchase,
                     type="text"
                     value={nairaCode}
                     onChange={(e) => setNairaCode(e.target.value)}
-                    placeholder="Enter Naira CODE"
+                    placeholder="Enter WIN CODE"
                     className="w-full pl-10 p-4 bg-gray-900 border border-gray-800 rounded-xl text-white focus:ring-2 focus:ring-green-neon outline-none font-mono text-lg tracking-widest placeholder:text-gray-700"
                 />
             </div>

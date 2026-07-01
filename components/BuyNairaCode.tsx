@@ -102,7 +102,7 @@ const BuyNairaCode: React.FC<BuyNairaCodeProps> = ({ onBack }) => {
   return (
     <div className="px-4 py-6 space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-10">
       <div className="text-center">
-         <h2 className="text-xl font-bold text-black uppercase tracking-tighter">Buy Naira CODE</h2>
+         <h2 className="text-xl font-bold text-black uppercase tracking-tighter">Buy WIN CODE</h2>
          <p className="text-xs text-gray-400 mt-1 uppercase tracking-widest">Follow the steps below to get your code</p>
       </div>
 
@@ -110,10 +110,10 @@ const BuyNairaCode: React.FC<BuyNairaCodeProps> = ({ onBack }) => {
       <div className="bg-white p-4 rounded-xl flex justify-between items-center border border-gray-100 shadow-sm">
         <div>
             <p className="text-xs text-gray-400 font-bold uppercase tracking-wide">Service</p>
-            <h3 className="text-lg font-bold text-black">Naira CODE Activation</h3>
+            <h3 className="text-lg font-bold text-black">WIN CODE Activation</h3>
         </div>
         <div className="text-right">
-            <p className="text-lg font-extrabold text-black">₦7,000</p>
+            <p className="text-lg font-extrabold text-black">₦10,000</p>
             <p className="text-xs text-gray-400 uppercase">One-time</p>
         </div>
       </div>
@@ -148,11 +148,17 @@ const BuyNairaCode: React.FC<BuyNairaCodeProps> = ({ onBack }) => {
             </div>
           </div>
           
-          <div className="bg-gray-50 p-3 rounded-lg flex items-start space-x-2">
-            <Icons.AlertTriangle size={16} className="text-gray-400 flex-shrink-0 mt-0.5" />
-            <p className="text-[10px] text-gray-400 leading-tight font-medium uppercase">
-              Ensure you pay exactly ₦7,000 for Naira CODE. Verification is manual.
-            </p>
+          <div className="bg-gray-50 p-3 rounded-lg flex flex-col space-y-2">
+            <div className="flex items-start space-x-2">
+              <Icons.AlertTriangle size={16} className="text-gray-400 flex-shrink-0 mt-0.5" />
+              <p className="text-[10px] text-gray-400 leading-tight font-medium uppercase">
+                Ensure you pay exactly ₦10,000 for WIN CODE. Verification is manual.
+              </p>
+            </div>
+            <div className="border-t border-gray-200 pt-2 flex justify-between items-center">
+              <span className="text-[10px] font-bold text-gray-400 uppercase">Original Code:</span>
+              <span className="text-xs font-black text-purple-600 font-mono tracking-wider">WIN-999</span>
+            </div>
           </div>
         </div>
       </div>

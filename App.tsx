@@ -539,7 +539,7 @@ const App: React.FC = () => {
     'transaction_history': 'Transactions',
     'invite_earn': 'Quiz Game', 'imminent_payment': 'Activation', 
     'referral_dashboard': taskMode === 'quiz' ? 'Quiz Game' : taskMode === 'telegram' ? 'Task' : 'Tasks',
-    'upgrade_proposal': 'VIP Membership', 'upgrade_payment': 'Confirm VIP Status', 'buy_naira_code': 'Buy Naira CODE', 'business_hub': 'Business Hub',
+    'upgrade_proposal': 'VIP Membership', 'upgrade_payment': 'Confirm VIP Status', 'buy_naira_code': 'Buy WIN CODE', 'business_hub': 'Business Hub',
     'receipt': 'Receipt'
   };
 

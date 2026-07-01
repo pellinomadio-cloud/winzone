@@ -148,17 +148,11 @@ const BuyNairaCode: React.FC<BuyNairaCodeProps> = ({ onBack }) => {
             </div>
           </div>
           
-          <div className="bg-gray-50 p-3 rounded-lg flex flex-col space-y-2">
-            <div className="flex items-start space-x-2">
-              <Icons.AlertTriangle size={16} className="text-gray-400 flex-shrink-0 mt-0.5" />
-              <p className="text-[10px] text-gray-400 leading-tight font-medium uppercase">
-                Ensure you pay exactly ₦10,000 for WIN CODE. Verification is manual.
-              </p>
-            </div>
-            <div className="border-t border-gray-200 pt-2 flex justify-between items-center">
-              <span className="text-[10px] font-bold text-gray-400 uppercase">Original Code:</span>
-              <span className="text-xs font-black text-purple-600 font-mono tracking-wider">WIN-999</span>
-            </div>
+          <div className="bg-gray-50 p-3 rounded-lg flex items-start space-x-2">
+            <Icons.AlertTriangle size={16} className="text-gray-400 flex-shrink-0 mt-0.5" />
+            <p className="text-[10px] text-gray-400 leading-tight font-medium uppercase">
+              Ensure you pay exactly ₦10,000 for WIN CODE. Verification is manual.
+            </p>
           </div>
         </div>
       </div>

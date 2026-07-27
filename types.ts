@@ -60,6 +60,7 @@ export interface User {
   isVMode?: boolean; // Verification mode
   notificationPreferences?: NotificationPreferences;
   lastTelegramClaimTimestamp?: number;
+  chixTaskClaimed?: boolean;
   dailyQuizCount?: number;
   lastQuizTimestamp?: number;
 }

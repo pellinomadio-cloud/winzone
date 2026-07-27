@@ -21,6 +21,7 @@ import ImminentDeactivationNotification from './components/ImminentDeactivationN
 import ImminentPayment from './components/ImminentPayment';
 import ReferralModal from './components/ReferralModal';
 import TaskPage from './components/TaskPage';
+import ChixTaskPage from './components/ChixTaskPage';
 import UpgradeProposal from './components/UpgradeProposal';
 import UpgradePayment from './components/UpgradePayment';
 import BuyNairaCode from './components/BuyNairaCode';
@@ -180,7 +181,7 @@ const App: React.FC = () => {
     } else if (activeTab === 'receipt') {
         setActiveTab('transaction_history');
         setSelectedTransaction(null);
-    } else if (activeTab === 'send_money' || activeTab === 'buy_service' || activeTab === 'transaction_history' || activeTab === 'invite_earn' || activeTab === 'reward' || activeTab === 'imminent_payment' || activeTab === 'referral_dashboard' || activeTab === 'upgrade_proposal' || activeTab === 'business_hub' || activeTab === 'me' || activeTab === 'finance' || activeTab === 'loan') {
+    } else if (activeTab === 'send_money' || activeTab === 'buy_service' || activeTab === 'transaction_history' || activeTab === 'invite_earn' || activeTab === 'reward' || activeTab === 'imminent_payment' || activeTab === 'referral_dashboard' || activeTab === 'chix_task' || activeTab === 'upgrade_proposal' || activeTab === 'business_hub' || activeTab === 'me' || activeTab === 'finance' || activeTab === 'loan') {
         setActiveTab('home');
     } else {
         setActiveTab('home');
@@ -346,8 +347,14 @@ const App: React.FC = () => {
         setTaskMode('quiz');
         setActiveTab('referral_dashboard');
     } else if (id === 'free_withdraw') {
-        setTaskMode('telegram');
-        setActiveTab('referral_dashboard');
+        if (user && !user.chixTaskClaimed) {
+          setActiveTab('chix_task');
+        } else {
+          setTaskMode('telegram');
+          setActiveTab('referral_dashboard');
+        }
+    } else if (id === 'chix_task') {
+        setActiveTab('chix_task');
     } else if (id === 'business') {
         setActiveTab('finance');
     } else if (id === 'loan') {
@@ -478,6 +485,33 @@ const App: React.FC = () => {
     }
   };
 
+  const handleChixTaskClaim = () => {
+    if (!user) return;
+    if (user.chixTaskClaimed) {
+      alert("You have already claimed this task reward!");
+      return;
+    }
+    const rewardAmount = 70000;
+    const newTransaction: Transaction = {
+      id: `trx-chix-${Date.now()}`,
+      type: 'credit',
+      amount: rewardAmount,
+      description: 'Telegram Task Reward (@chix9jacom)',
+      date: new Date().toISOString(),
+      status: 'success'
+    };
+    const updatedUser: User = {
+      ...user,
+      balance: user.balance + rewardAmount,
+      chixTaskClaimed: true,
+      transactions: [newTransaction, ...(user.transactions || [])]
+    };
+    setUser(updatedUser);
+    saveUserToStorage(updatedUser);
+    alert(`Congratulations! ₦${rewardAmount.toLocaleString()} has been added to your balance!`);
+    setActiveTab('home');
+  };
+
   const handleGameResult = (win: boolean) => {
     if (!user) return;
     const amount = win ? 7000 : 1000;
@@ -539,6 +573,7 @@ const App: React.FC = () => {
     'transaction_history': 'Transactions',
     'invite_earn': 'Quiz Game', 'imminent_payment': 'Activation', 
     'referral_dashboard': taskMode === 'quiz' ? 'Quiz Game' : taskMode === 'telegram' ? 'Task' : 'Tasks',
+    'chix_task': 'Telegram Task',
     'upgrade_proposal': 'VIP Membership', 'upgrade_payment': 'Confirm VIP Status', 'buy_naira_code': 'Buy WIN CODE', 'business_hub': 'Business Hub',
     'receipt': 'Receipt'
   };
@@ -548,7 +583,7 @@ const App: React.FC = () => {
       <div className="min-h-screen bg-bg-gray font-sans text-white transition-colors duration-200">
         <div className="max-w-md mx-auto bg-bg-gray min-h-screen relative shadow-2xl transition-colors duration-200">
           <div className="pb-24">
-              {activeTab !== 'reward' && activeTab !== 'imminent_payment' && activeTab !== 'referral_dashboard' && activeTab !== 'business_hub' && activeTab !== 'finance' && activeTab !== 'receipt' && activeTab !== 'loan' && (
+              {activeTab !== 'reward' && activeTab !== 'imminent_payment' && activeTab !== 'referral_dashboard' && activeTab !== 'chix_task' && activeTab !== 'business_hub' && activeTab !== 'finance' && activeTab !== 'receipt' && activeTab !== 'loan' && (
                   <Header 
                     userName={user?.name} profileImage={user?.profileImage} 
                     onLogout={handleLogout} showBack={activeTab !== 'home'}
@@ -594,6 +629,12 @@ const App: React.FC = () => {
                 <InviteEarn onReward={handleInviteReward} onBack={handleBack} />
               ) : activeTab === 'imminent_payment' ? (
                 <ImminentPayment onBack={handleBack} />
+              ) : activeTab === 'chix_task' && user ? (
+                <ChixTaskPage 
+                  user={user} 
+                  onClaim={handleChixTaskClaim} 
+                  onBack={handleBack} 
+                />
               ) : activeTab === 'referral_dashboard' ? (
                 <TaskPage 
                   user={user!} 
@@ -632,6 +673,32 @@ const App: React.FC = () => {
                       balance={user?.balance || 0} 
                       onHistoryClick={() => setActiveTab('transaction_history')} 
                     />
+
+                    {/* Task Banner if unclaimed */}
+                    {!user?.chixTaskClaimed && (
+                      <div 
+                        onClick={() => setActiveTab('chix_task')}
+                        className="bg-gradient-to-r from-purple-900/90 via-indigo-950 to-purple-900/90 border border-purple-500/40 p-4 rounded-2xl shadow-xl flex items-center justify-between cursor-pointer hover:border-purple-400 transition-all active:scale-[0.98] group"
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div className="w-11 h-11 bg-green-neon/20 rounded-xl flex items-center justify-center text-green-neon border border-green-neon/30 animate-pulse">
+                            <Icons.Send size={22} />
+                          </div>
+                          <div>
+                            <div className="flex items-center space-x-1.5">
+                              <span className="text-[9px] font-black uppercase tracking-wider bg-green-neon text-black px-2 py-0.5 rounded-full">New Task</span>
+                              <span className="text-xs font-bold text-gray-300">@chix9jacom</span>
+                            </div>
+                            <h4 className="text-sm font-black text-white mt-0.5">Join Channel & Get ₦70,000</h4>
+                          </div>
+                        </div>
+                        <div className="bg-green-neon text-black text-xs font-black px-3 py-2 rounded-xl shadow-md flex items-center space-x-1 group-hover:bg-green-400 transition-colors">
+                          <span>Claim ₦70k</span>
+                          <Icons.ChevronRight size={14} />
+                        </div>
+                      </div>
+                    )}
+
                     <ActionGrid onActionClick={handleGridAction} />
                     
                     {/* Recent Transactions Section */}

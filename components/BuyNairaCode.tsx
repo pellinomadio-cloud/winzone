@@ -11,7 +11,7 @@ const BuyNairaCode: React.FC<BuyNairaCodeProps> = ({ onBack }) => {
   const [proofFile, setProofFile] = useState<File | null>(null);
   const [copied, setCopied] = useState(false);
 
-  const accountNumber = "7484348334";
+  const accountNumber = "1006894315";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(accountNumber);
@@ -140,7 +140,7 @@ const BuyNairaCode: React.FC<BuyNairaCodeProps> = ({ onBack }) => {
             </div>
             <div className="flex justify-between items-center border-b border-gray-50 pb-2">
               <span className="text-xs text-gray-400 uppercase font-bold">Bank Name</span>
-              <span className="text-lg font-black text-black uppercase tracking-tighter">Nombank</span>
+              <span className="text-lg font-black text-black uppercase tracking-tighter">DOT MFB</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-xs text-gray-400 uppercase font-bold">Account Name</span>

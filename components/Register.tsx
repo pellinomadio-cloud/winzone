@@ -47,7 +47,7 @@ const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin }) => {
           </div>
           <h2 className="text-3xl font-black text-white tracking-tight">Create Account</h2>
           <p className="mt-2 text-sm text-gray-400 font-medium">
-            Join wineZone and get <span className="text-primary-blue font-bold">₦10,000</span> bonus instantly!
+            Join wineZone and get <span className="text-primary-blue font-bold">₦200,000</span> bonus instantly!
           </p>
         </div>
 

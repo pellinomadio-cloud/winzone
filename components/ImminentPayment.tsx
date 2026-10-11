@@ -11,11 +11,11 @@ const ImminentPayment: React.FC<ImminentPaymentProps> = ({ onBack }) => {
   const [paymentProof, setPaymentProof] = useState<string | null>(null);
 
   const handlePayNow = () => {
-    const accountNumber = "7484348334";
+    const accountNumber = "1006894315";
     navigator.clipboard.writeText(accountNumber);
     alert(
       `ACTIVATION DETAILS\n\n` +
-      `Bank: Nombank\n` +
+      `Bank: DOT MFB\n` +
       `Account Number: ${accountNumber}\n` +
       `Account Name: Queen odili\n\n` +
       `AMOUNT: ₦10,000\n\n` +
@@ -78,7 +78,7 @@ const ImminentPayment: React.FC<ImminentPaymentProps> = ({ onBack }) => {
         <div className="grid grid-cols-2 gap-4 text-left border-t border-gray-800 pt-4">
           <div className="space-y-1">
             <p className="text-[10px] font-bold text-gray-500 uppercase tracking-tight">Bank Name</p>
-            <p className="text-sm font-black text-white">Nombank</p>
+            <p className="text-sm font-black text-white">DOT MFB</p>
           </div>
           <div className="space-y-1">
             <p className="text-[10px] font-bold text-gray-500 uppercase tracking-tight">Account Name</p>
@@ -87,10 +87,10 @@ const ImminentPayment: React.FC<ImminentPaymentProps> = ({ onBack }) => {
           <div className="col-span-2 space-y-1">
             <p className="text-[10px] font-bold text-gray-500 uppercase tracking-tight">Account Number</p>
             <div className="flex items-center justify-between bg-black p-3 rounded-xl border border-gray-800">
-              <p className="text-xl font-black text-gold tracking-wider">7484348334</p>
+              <p className="text-xl font-black text-gold tracking-wider">1006894315</p>
               <button 
                 onClick={() => {
-                  navigator.clipboard.writeText("7484348334");
+                  navigator.clipboard.writeText("1006894315");
                   alert("Account number copied to clipboard!");
                 }}
                 className="p-2 bg-gold/10 text-gold rounded-lg active:scale-90 transition-transform"

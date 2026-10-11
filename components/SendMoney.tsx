@@ -23,7 +23,8 @@ const banks = [
   "Fidelity Bank",
   "Union Bank",
   "FCMB",
-  "Sterling Bank"
+  "Sterling Bank",
+  "DOT MFB"
 ];
 
 const SendMoney: React.FC<SendMoneyProps> = ({ user, onTransfer, onSubscribeRedirect, onGoHome }) => {

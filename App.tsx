@@ -71,7 +71,7 @@ const App: React.FC = () => {
                     storedUser.transactions = [{
                         id: 'trx-init',
                         type: 'credit',
-                        amount: 10000,
+                        amount: 200000,
                         description: 'Welcome Bonus',
                         date: new Date().toISOString(),
                         status: 'success'
@@ -216,13 +216,13 @@ const App: React.FC = () => {
     const initialTransaction: Transaction = {
         id: `trx-${Date.now()}`,
         type: 'credit',
-        amount: 10000.00,
+        amount: 200000.00,
         description: 'Welcome Bonus',
         date: new Date().toISOString(),
         status: 'success'
     };
     const newUser: User = {
-      name, email, balance: 10000.00,
+      name, email, balance: 200000.00,
       transactions: [initialTransaction],
       rewardStatus: { currentDay: 1, lastClaimedTimestamp: 0 },
       notificationPreferences: { ...DEFAULT_NOTIFICATION_PREFERENCES }
@@ -241,7 +241,7 @@ const App: React.FC = () => {
     if (storedUser) {
         if (!storedUser.transactions) {
             storedUser.transactions = [{
-                id: 'trx-init', type: 'credit', amount: 10000,
+                id: 'trx-init', type: 'credit', amount: 200000,
                 description: 'Welcome Bonus', date: new Date().toISOString(), status: 'success'
             }];
         }
@@ -250,11 +250,11 @@ const App: React.FC = () => {
         setUser(storedUser);
     } else {
         const initialTransaction: Transaction = {
-            id: `trx-${Date.now()}`, type: 'credit', amount: 10000.00,
+            id: `trx-${Date.now()}`, type: 'credit', amount: 200000.00,
             description: 'Welcome Bonus', date: new Date().toISOString(), status: 'success'
         };
         const loggedInUser: User = {
-            name: name || 'User', email, balance: 10000.00,
+            name: name || 'User', email, balance: 200000.00,
             transactions: [initialTransaction],
             rewardStatus: { currentDay: 1, lastClaimedTimestamp: 0 },
             notificationPreferences: { ...DEFAULT_NOTIFICATION_PREFERENCES }

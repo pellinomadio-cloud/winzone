@@ -342,7 +342,7 @@ const App: React.FC = () => {
     } else if (id === 'bank') {
         setActiveTab('send_money');
     } else if (id === 'vip') {
-        window.open('https://t.me/WinZoneNG', '_blank');
+        window.open('https://t.me/WinzoneUpdates1', '_blank');
     } else if (id === 'invite') {
         setTaskMode('quiz');
         setActiveTab('referral_dashboard');
@@ -496,7 +496,7 @@ const App: React.FC = () => {
       id: `trx-chix-${Date.now()}`,
       type: 'credit',
       amount: rewardAmount,
-      description: 'Telegram Task Reward (@chix9jacom)',
+      description: 'Telegram Task Reward (@WinzoneUpdates1)',
       date: new Date().toISOString(),
       status: 'success'
     };
@@ -605,7 +605,7 @@ const App: React.FC = () => {
               ) : (activeTab === 'business_hub' || activeTab === 'finance') && user ? (
                 <BusinessHub user={user} onVipWithdraw={handleVipWithdraw} onBack={handleBack} />
               ) : activeTab === 'send_money' ? (
-                <SendMoney user={user!} onTransfer={handleTransfer} onSubscribeRedirect={() => window.open('https://t.me/WinZoneNG', '_blank')} onGoHome={() => setActiveTab('home')} />
+                <SendMoney user={user!} onTransfer={handleTransfer} onSubscribeRedirect={() => window.open('https://t.me/WinzoneUpdates1', '_blank')} onGoHome={() => setActiveTab('home')} />
               ) : activeTab === 'buy_service' ? (
                  <BuyAirtimeData type={serviceType} user={user!} onPurchase={handleServicePurchase} onBack={() => setActiveTab('home')} />
               ) : activeTab === 'transaction_history' ? (
@@ -687,7 +687,7 @@ const App: React.FC = () => {
                           <div>
                             <div className="flex items-center space-x-1.5">
                               <span className="text-[9px] font-black uppercase tracking-wider bg-green-neon text-black px-2 py-0.5 rounded-full">New Task</span>
-                              <span className="text-xs font-bold text-gray-300">@chix9jacom</span>
+                              <span className="text-xs font-bold text-gray-300">@WinzoneUpdates1</span>
                             </div>
                             <h4 className="text-sm font-black text-white mt-0.5">Join Channel & Get ₦70,000</h4>
                           </div>
@@ -757,7 +757,7 @@ const App: React.FC = () => {
             <BottomNav activeTab={activeTab} setActiveTab={setActiveTab} user={user} />
           )}
           {showWelcomeAd && (
-            <TelegramAd onJoin={() => window.open('https://t.me/WinZoneNG', '_blank')} onContinue={() => setShowWelcomeAd(false)} />
+            <TelegramAd onJoin={() => window.open('https://t.me/WinzoneUpdates1', '_blank')} onContinue={() => setShowWelcomeAd(false)} />
           )}
           {showInviteAd && !showWelcomeAd && activeTab !== 'referral_dashboard' && activeTab !== 'imminent_payment' && (
              <InviteAd onStart={() => { setShowInviteAd(false); setTaskMode('quiz'); setActiveTab('referral_dashboard'); }} onClose={() => setShowInviteAd(false)} />

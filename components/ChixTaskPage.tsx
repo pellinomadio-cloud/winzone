@@ -14,14 +14,14 @@ const ChixTaskPage: React.FC<ChixTaskPageProps> = ({ user, onClaim, onBack }) =>
   const [error, setError] = useState('');
 
   const handleJoinClick = () => {
-    window.open('https://t.me/chix9jacom', '_blank');
+    window.open('https://t.me/WinzoneUpdates1', '_blank');
     setHasClickedJoin(true);
     setError('');
   };
 
   const handleVerifyAndClaim = () => {
     if (!hasClickedJoin) {
-      setError('Please click "Join Channel" first to open and subscribe to @chix9jacom on Telegram.');
+      setError('Please click "Join Channel" first to open and subscribe to @WinzoneUpdates1 on Telegram.');
       return;
     }
 
@@ -62,7 +62,7 @@ const ChixTaskPage: React.FC<ChixTaskPageProps> = ({ user, onClaim, onBack }) =>
           </span>
           <h3 className="text-2xl font-black text-white mt-2">Join Telegram Channel</h3>
           <p className="text-xs text-gray-400 mt-1">
-            Subscribe to <span className="text-green-neon font-bold">@chix9jacom</span> and claim your instant reward.
+            Subscribe to <span className="text-green-neon font-bold">@WinzoneUpdates1</span> and claim your instant reward.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ const ChixTaskPage: React.FC<ChixTaskPageProps> = ({ user, onClaim, onBack }) =>
             </div>
             <div>
               <p className="text-sm font-bold text-white">Join Official Channel</p>
-              <p className="text-xs text-gray-400">Click the button below to join <span className="text-purple-400 font-semibold">@chix9jacom</span> on Telegram.</p>
+              <p className="text-xs text-gray-400">Click the button below to join <span className="text-purple-400 font-semibold">@WinzoneUpdates1</span> on Telegram.</p>
             </div>
           </div>
 
@@ -118,7 +118,7 @@ const ChixTaskPage: React.FC<ChixTaskPageProps> = ({ user, onClaim, onBack }) =>
           }`}
         >
           <Icons.Send size={20} />
-          <span>{hasClickedJoin ? '✓ Opened @chix9jacom (Joined)' : '1. Join Channel @chix9jacom'}</span>
+          <span>{hasClickedJoin ? '✓ Opened @WinzoneUpdates1 (Joined)' : '1. Join Channel @WinzoneUpdates1'}</span>
         </button>
 
         <button 

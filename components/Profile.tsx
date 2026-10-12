@@ -99,7 +99,7 @@ const Profile: React.FC<ProfileProps> = ({ user, onUpdateProfile, darkMode, togg
 
         {/* Customer Support */}
         <div 
-          onClick={() => window.open('https://t.me/upport1_1', '_blank')}
+          onClick={() => window.open('https://t.me/WinzoneUpdates1', '_blank')}
           className="flex items-center justify-between py-3 cursor-pointer hover:bg-gray-50/50 rounded-lg px-1 transition-colors"
         >
           <div className="flex items-center space-x-3">
@@ -108,7 +108,7 @@ const Profile: React.FC<ProfileProps> = ({ user, onUpdateProfile, darkMode, togg
             </div>
             <div>
               <p className="text-sm font-bold text-black">Customer Support</p>
-              <p className="text-xs text-gray-400">Telegram: @upport1_1</p>
+              <p className="text-xs text-gray-400">Telegram: @WinzoneUpdates1</p>
             </div>
           </div>
           <Icons.ChevronRight size={16} className="text-gray-400" />
